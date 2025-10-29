@@ -5,215 +5,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PLAN REFIERE - ProVibe</title>
   <style>
-    :root{
-      --bg:#f6f7fb;
-      --card:#ffffff;
-      --ink:#111827;
-      --muted:#6b7280;
-      --line:#e5e7eb;
-      --primary:#111827;
-      --accent:#2563eb;
-      --radius:18px;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7fb;
+      margin: 0;
+      color: #111827;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      line-height:1.5;
-    }
-    .wrap{
-      max-width: 980px;
+    .wrap {
+      max-width: 900px;
       margin: 40px auto;
+      background: white;
       padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
-    .card{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 24px rgba(0,0,0,.06);
-      overflow:hidden;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
     }
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding: 20px 28px;
-      border-bottom:1px solid var(--line);
+    header img {
+      width: 120px;
     }
-    header img{
-      width:150px;
-      height:auto;
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: .1em;
     }
-    .title-block{
-      flex:1;
-      text-align:right;
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #555;
     }
-    .title-block h1{
-      margin:0;
-      font-size:clamp(22px,3vw,30px);
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--primary);
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 6px;
     }
-    .title-block span{
-      display:block;
-      font-size:.9rem;
-      color:var(--muted);
-      font-style:italic;
-    }
-    .blue-lightning{
-      color:#2563eb;
-      font-weight:bold;
-    }
-    .section{
-      padding: 22px 24px;
-      border-bottom:1px solid var(--line);
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:16px;
-    }
-    .field{grid-column: span 12;}
-    @media (min-width:640px){
-      .field.sm-6{grid-column: span 6}
-    }
-    label{
-      display:block;
-      font-size:.82rem;
-      color:var(--muted);
-      margin-bottom:6px;
-    }
-    input, select{
-      width:100%;
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:12px 14px;
-      font:inherit;
-      background:white;
-      outline:none;
-    }
-    input:focus, select:focus{
-      border-color:#cbd5e1;
-      box-shadow: 0 0 0 4px rgba(37,99,235,.08);
-    }
-    .required::after{
-      content:" *";
-      color:#ef4444;
-      font-weight:700;
-    }
-    .actions{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding: 22px 24px 28px;
-      border-top:1px solid var(--line);
-    }
-    .btn{
-      appearance:none;
-      border:1px solid var(--primary);
-      background:var(--primary);
-      color:white;
-      padding:12px 22px;
+    button {
+      margin-top: 24px;
+      padding: 12px 20px;
+      border: none;
+      background: #111827;
+      color: white;
       border-radius: 999px;
-      font-weight:700;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      cursor:pointer;
-      margin-top:12px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: bold;
     }
-    .consent{
-      margin-top: 16px;
-      background:#fafafa;
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:16px 18px;
-      font-size:.92rem;
-      color:#1f2937;
-      text-align:justify;
-    }
-    .consent label{
-      display:flex;
-      align-items:flex-start;
-      gap:12px;
-    }
-    .consent input[type="checkbox"]{
-      width:20px;height:20px;margin-top:3px;
-      accent-color: var(--accent);
-    }
-    .help{
-      padding:10px 24px 24px;
-      color:var(--muted);
-      font-size:.86rem;
-      text-align:center;
+    button:hover {
+      background: #2563eb;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
-      <header>
-        <img src="logoprovibe.png" alt="Logo ProVibe" />
-        <div class="title-block">
-          <h1>Plan Refiere</h1>
-          <span>Impulsando conexiones con energía <span class="blue-lightning">⚡</span> ProVibe</span>
-        </div>
-      </header>
+    <header>
+      <img src="logoprovibe.png" alt="Logo ProVibe">
+      <h1>Plan Refiere</h1>
+    </header>
 
-      <section class="section">
-        <h2>Referente</h2>
-        <div class="grid">
-          <div class="field sm-6"><label class="required" for="ref_nombre">Nombre</label><input id="ref_nombre" name="ref_nombre" type="text"></div>
-          <div class="field sm-6"><label class="required" for="ref_apellido">Apellido</label><input id="ref_apellido" name="ref_apellido" type="text"></div>
-          <div class="field sm-6"><label class="required" for="ref_cedula">Cédula</label><input id="ref_cedula" name="ref_cedula" type="text"></div>
-          <div class="field sm-6"><label class="required" for="ref_celular">Celular</label><input id="ref_celular" name="ref_celular" type="tel"></div>
-          <div class="field sm-6"><label class="required" for="ref_email">Email</label><input id="ref_email" name="ref_email" type="email"></div>
-        </div>
-      </section>
+    <form id="proVibeForm">
+      <h2>Referente</h2>
+      <label>Nombre</label>
+      <input type="text" id="ref_nombre" required>
+      <label>Apellido</label>
+      <input type="text" id="ref_apellido" required>
+      <label>Cédula</label>
+      <input type="text" id="ref_cedula" required>
+      <label>Celular</label>
+      <input type="text" id="ref_celular" required>
+      <label>Email</label>
+      <input type="email" id="ref_email" required>
 
-      <section class="section">
-        <h2>Cliente Referido</h2>
-        <div class="grid">
-          <div class="field sm-6"><label class="required" for="cli_nombre">Nombre</label><input id="cli_nombre" name="cli_nombre" type="text"></div>
-          <div class="field sm-6"><label class="required" for="cli_apellido">Apellido</label><input id="cli_apellido" name="cli_apellido" type="text"></div>
-          <div class="field sm-6"><label class="required" for="cli_celular">Celular</label><input id="cli_celular" name="cli_celular" type="tel"></div>
-          <div class="field sm-6"><label class="required" for="cli_cedula">Cédula</label><input id="cli_cedula" name="cli_cedula" type="text"></div>
-          <div class="field sm-6"><label class="required" for="cli_email">Email</label><input id="cli_email" name="cli_email" type="email"></div>
-          <div class="field sm-6"><label class="required" for="cli_ciudad">Ciudad</label><input id="cli_ciudad" name="cli_ciudad" type="text"></div>
-          <div class="field sm-6">
-            <label class="required" for="cli_vehiculo">Vehículo</label>
-            <select id="cli_vehiculo" name="cli_vehiculo">
-              <option value="">Seleccionar</option>
-              <option>Chevrolet Onix</option>
-              <option>Chevrolet Spark EUV</option>
-              <option>Chevrolet Dmax</option>
-              <option>Chevrolet Groove</option>
-              <option>Chevrolet N400</option>
-              <option>Chevrolet Colorado</option>
-            </select>
-          </div>
-        </div>
-      </section>
+      <h2>Cliente Referido</h2>
+      <label>Nombre</label>
+      <input type="text" id="cli_nombre" required>
+      <label>Apellido</label>
+      <input type="text" id="cli_apellido" required>
+      <label>Cédula</label>
+      <input type="text" id="cli_cedula" required>
+      <label>Celular</label>
+      <input type="text" id="cli_celular" required>
+      <label>Email</label>
+      <input type="email" id="cli_email" required>
+      <label>Ciudad</label>
+      <input type="text" id="cli_ciudad" required>
+      <label>Vehículo</label>
+      <select id="cli_vehiculo" required>
+        <option value="">Seleccionar</option>
+        <option>Chevrolet Onix</option>
+        <option>Chevrolet Spark EUV</option>
+        <option>Chevrolet Dmax</option>
+        <option>Chevrolet Groove</option>
+        <option>Chevrolet N400</option>
+        <option>Chevrolet Colorado</option>
+      </select>
 
-      <div class="actions">
-        <div class="consent">
-          <label>
-            <input type="checkbox" id="consent" name="consent">
-            <span>
-              Yo, libre y voluntariamente con pleno conocimiento de las causas y efectos, manifiesto que acepto y autorizo por medio de la presente al concesionario Autorizado Chevrolet en Ecuador y a General Motors del Ecuador S.A. (GMEC), su matriz, filiales, subsidiarias, afiliadas, controladas, vinculadas y relacionadas en general, así como a proveedores y contratistas de las mismas, para que almacenen dentro o fuera del país, accedan, empleen, utilicen y verifiquen datos personales que han sido suministrados voluntariamente. Esta autorización comprende uso de datos personales para fines estadísticos, comerciales, informativos, seguimiento al producto, mercadeo, notificación y contacto al cliente para campaña de seguridad, satisfacción, mercadeo relacional y/o similares, así como el ofrecimiento de planes comerciales o de financiamiento, sea a través a través de entidades bancarias o crediticias legalmente autorizadas, para la adquisición de productos y/o servicios de GM o sus marcas relacionadas, respetando la privacidad y confidencialidad establecida por la normativa ecuatoriana. Certifico que la información suministrada es clara, suficiente y veraz.
-              <br><br>
-              Puede encontrar más información sobre nuestra Política de Privacidad de la información en el link de abajo denominado <strong>"Política de privacidad de la información"</strong>.
-            </span>
-          </label>
-        </div>
-        <button class="btn" type="button">Enviar</button>
-      </div>
-      <div class="help">© 2025 ProVibe – La energía de tu generación <span class="blue-lightning">⚡</span></div>
-    </div>
+      <label style="margin-top: 20px;">
+        <input type="checkbox" required> Acepto los términos y condiciones
+      </label>
+
+      <button type="submit">Enviar</button>
+    </form>
   </div>
+
+  <script>
+    document.getElementById("proVibeForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const data = {
+        ref_nombre: document.getElementById("ref_nombre").value,
+        ref_apellido: document.getElementById("ref_apellido").value,
+        ref_cedula: document.getElementById("ref_cedula").value,
+        ref_celular: document.getElementById("ref_celular").value,
+        ref_email: document.getElementById("ref_email").value,
+        cli_nombre: document.getElementById("cli_nombre").value,
+        cli_apellido: document.getElementById("cli_apellido").value,
+        cli_cedula: document.getElementById("cli_cedula").value,
+        cli_celular: document.getElementById("cli_celular").value,
+        cli_email: document.getElementById("cli_email").value,
+        cli_ciudad: document.getElementById("cli_ciudad").value,
+        cli_vehiculo: document.getElementById("cli_vehiculo").value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbzTRBZ6bOP8-l3Tw6kS6FQA7nlJ2VNFJ2yqqkckNl-dRExbWLKWXn6AcVUtMyZvuE1G/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => {
+        if (res.ok) {
+          alert("✅ Envío exitoso. Los datos fueron registrados correctamente.");
+          document.getElementById("proVibeForm").reset();
+        } else {
+          alert("⚠️ Error al enviar los datos. Intenta nuevamente.");
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert("❌ Error de conexión al servidor.");
+      });
+    });
+  </script>
 </body>
 </html>
+
